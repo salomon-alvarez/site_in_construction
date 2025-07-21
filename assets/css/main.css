@@ -3327,25 +3327,45 @@ input, select, textarea {
 			}
 
 		}
-/* Ensure all portfolio tiles have equal height */
+/* Equal tile height, hover content, centered title and description */
 .tiles article {
   height: 420px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+}
+
+.tiles article .image {
+  height: 200px;
+  overflow: hidden;
 }
 
 .tiles article .image img {
-  height: 200px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.tiles article:hover .image img {
+  transform: scale(1.1);
+}
+
+.tiles article h2 {
+  margin: 1em 0 0.5em 0;
+  text-align: center;
 }
 
 .tiles article .content {
-  flex-grow: 1;
-  padding: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 0 1em;
   text-align: center;
+  font-size: 0.9em;
+}
+
+.tiles article:hover .content {
+  opacity: 1;
 }
