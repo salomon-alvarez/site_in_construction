@@ -1,111 +1,111 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Supply Chain Modeling – Salomon Alvarez</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <title>Supply Chain Modeling – Salomon Alvarez</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 <body class="is-preload">
-    <div id="wrapper">
+  <div id="wrapper">
 
-        <!-- Header -->
-        <header id="header">
-            <div class="inner">
-                <a href="index.html" class="logo">
-                    <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Salomon Alvarez</span>
-                </a>
-                <nav>
-                    <ul>
-                        <li><a href="#menu">Menu</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <header id="header">
+      <div class="inner">
+        <a href="index.html" class="logo">
+          <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Salomon Alvarez</span>
+        </a>
+        <nav>
+          <ul><li><a href="#menu">Menu</a></li></ul>
+        </nav>
+      </div>
+    </header>
+
+    <nav id="menu">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="main">
+      <div class="inner">
+        <header>
+          <h1>Supply Chain Modeling</h1>
+          <p>Our deep learning model based on supply chain analysis significantly outperformed traditional forecasting methods, achieving a 0.9872 correlation with actual stock prices.</p>
         </header>
 
-        <!-- Menu -->
-        <nav id="menu">
-            <h2>Menu</h2>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <p>
+          This project explores how the systematic study of businesses within a company's supply chain can help predict its stock price.
+          Using Intel Corp as the target, we trained both a neural network and a regression model using stock prices of Intel’s suppliers, distributors, and clients.
+        </p>
 
-        <!-- Main Content -->
-        <div id="main">
-            <div class="inner">
-                <header>
-                    <h1>Supply Chain Modeling</h1>
-                    <p>Forecasting Intel’s stock price using machine learning and supply chain data.</p>
-                </header>
+        <h3>Supply Chain Diagram</h3>
+        <span class="image main"><img src="images/p2_supply_chain.png" alt="Supply Chain Diagram" /></span>
 
-                <p>The goal of this project is to explore the idea that the systematic study of the movement in prices of businesses that comprise the supply chain of a certain company can lead to predicting the stock's price of this very company.</p>
+        <p>
+          The idea draws from the understanding that supply chains are interconnected networks. If key clients struggle, it can signal trouble upstream. Conversely, performance issues from critical suppliers can hinder production.
+        </p>
 
-                <p>We propose building machine learning models where the features are the stock prices of supply chain partners of a company. As a case study, Intel was chosen as the target. The approach compares two models: one using data from Intel’s supply chain (suppliers, distributors, clients) and another using competitors’ stock prices.</p>
+        <h3>Model Architecture</h3>
+        <span class="image main"><img src="images/p2_model.png" alt="Neural Network Model Architecture" /></span>
 
-                <h3>Supply Chain Used:</h3>
-                <ul>
-                    <li><strong>Suppliers:</strong> Applied Materials, TSMC</li>
-                    <li><strong>Distributors:</strong> Arrow Corp, Avnet, Synnex</li>
-                    <li><strong>Clients:</strong> Dell, HP, Lenovo</li>
-                </ul>
+        <p>
+          A neural network was trained with data from companies in Intel’s supply chain (e.g., Applied Materials, TSMC, Dell, HP) and compared with a model trained on Intel’s competitors (e.g., AMD, NVIDIA, Qualcomm).
+        </p>
 
-                <h3>Comparison Model:</h3>
-                <ul>
-                    <li>Competitors: AMD, NVIDIA, Qualcomm, Broadcom, Micron, Texas Instruments</li>
-                </ul>
+        <h3>Model Training</h3>
+        <span class="image main"><img src="images/p2_loss_vs_epochs.png" alt="Loss vs Epochs" /></span>
+        <span class="image main"><img src="images/p2_MAE_vs_epochs.png" alt="MAE vs Epochs" /></span>
 
-                <p>Both models were trained using historical price data. The deep learning model outperformed a traditional ML regression model.</p>
+        <p>
+          Hyperparameters were fine-tuned manually to reduce error without overfitting. Training performance was evaluated with K-fold validation and tracked using MAE and loss across epochs.
+        </p>
 
-                <h3>Model Setup:</h3>
-                <img src="images/model_setup.png" alt="Model Setup" style="max-width:100%; margin: 1em 0;" />
+        <h3>Results: Supply Chain vs Competition</h3>
+        <span class="image main"><img src="images/p2_correlation_sc.png" alt="Correlation – Supply Chain Model" /></span>
+        <span class="image main"><img src="images/p2_correlation_comp.png" alt="Correlation – Competitor Model" /></span>
+        <span class="image main"><img src="images/p2_competition.png" alt="Model Comparison" /></span>
 
-                <p>K-fold validation was used to ensure generalization. Performance was measured via mean absolute error and loss convergence plots.</p>
+        <p>
+          The supply chain model achieved a correlation of 0.9872 with real stock prices using deep learning, outperforming both the competitor-based model and a traditional regression model.
+        </p>
 
-                <h3>Training Loss Curves:</h3>
-                <img src="images/loss_curve.png" alt="Loss Curve" style="max-width:100%; margin: 1em 0;" />
+        <h3>Sample Results</h3>
+        <span class="image main"><img src="images/p2_results.png" alt="Sample Predictions vs Real Values" /></span>
 
-                <h3>Forecasting Results:</h3>
-                <img src="images/prediction_supply_chain.png" alt="Supply Chain Results" style="max-width:100%; margin: 1em 0;" />
-                <img src="images/prediction_competition.png" alt="Competitor Results" style="max-width:100%; margin: 1em 0;" />
-
-                <h3>Correlation Results:</h3>
-                <ul>
-                    <li><strong>Supply Chain – Deep Learning:</strong> 0.9872</li>
-                    <li><strong>Supply Chain – Regression:</strong> 0.8614</li>
-                    <li><strong>Competitors – Deep Learning:</strong> 0.9602</li>
-                    <li><strong>Competitors – Regression:</strong> 0.8277</li>
-                </ul>
-
-                <h3>Sample Output Table:</h3>
-                <img src="images/results_table.png" alt="Results Table" style="max-width:100%; margin: 1em 0;" />
-
-                <p>These results show that incorporating supply chain data into financial forecasting models can provide a valuable edge over traditional methods focused only on competitors.</p>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="inner">
-                <ul class="copyright">
-                    <li>&copy; Salomon Alvarez</li>
-                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-                </ul>
-            </div>
-        </footer>
-
+        <p>
+          These results suggest that incorporating supply chain insights into equity forecasting offers a promising new approach for financial modeling and investment analysis.
+        </p>
+      </div>
     </div>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <footer id="footer">
+      <div class="inner">
+        <section>
+          <h2>Get in touch</h2>
+          <form method="post" action="#">
+            <div class="fields">
+              <div class="field half"><input type="text" name="name" id="name" placeholder="Name" /></div>
+              <div class="field half"><input type="email" name="email" id="email" placeholder="Email" /></div>
+              <div class="field"><textarea name="message" id="message" placeholder="Message"></textarea></div>
+            </div>
+            <ul class="actions"><li><input type="submit" value="Send" class="primary" /></li></ul>
+          </form>
+        </section>
+      </div>
+    </footer>
 
+  </div>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
