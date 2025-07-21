@@ -3327,3 +3327,25 @@ input, select, textarea {
 			}
 
 		}
+/* Ensure all portfolio tiles have equal height */
+.tiles article {
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tiles article .image img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.tiles article .content {
+  flex-grow: 1;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
