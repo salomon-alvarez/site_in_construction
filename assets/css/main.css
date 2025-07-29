@@ -2582,23 +2582,19 @@ input, select, textarea {
 .tiles article > a {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	padding: 1em;
-	color: #ffffff;
+	padding: 1.5em 1em;
 	text-align: center;
 	text-decoration: none;
+	color: #ffffff !important;
 	transition: background-color 0.5s ease, transform 0.5s ease;
 	z-index: 3;
-}
-
-.tiles article > a:hover {
-	color: #ffffff;
 }
 
 .tiles article > a h2 {
@@ -2607,19 +2603,21 @@ input, select, textarea {
 	line-height: 1.3;
 	transform: translateY(0);
 	transition: transform 0.3s ease;
+	color: #ffffff !important;
 }
 
 .tiles article:hover > a h2 {
-	transform: translateY(-0.5em);
+	transform: translateY(-0.4em);
 }
 
 .tiles article > a .content {
 	max-height: 0;
 	opacity: 0;
-	margin-top: 0.5em;
+	margin-top: 0.25em;
 	line-height: 1.4;
 	transition: max-height 0.5s ease, opacity 0.5s ease;
 	overflow: hidden;
+	color: #ffffff !important;
 }
 
 .tiles article:hover > a .content {
