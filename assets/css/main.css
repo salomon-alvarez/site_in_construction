@@ -3225,3 +3225,9 @@ body.is-preload .tiles article {
 .tiles article:hover .content {
   opacity: 1;
 }
+
+section.tiles > article {
+  height: 4.5em !important;
+  min-height: 4.5em !important;
+  max-height: 4.5em !important;
+}
