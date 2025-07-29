@@ -2599,8 +2599,10 @@ input, select, textarea {
 			}
 
 				.tiles article > .image img {
-					display: block;
-					width: 100%;
+  					width: 100%;
+  					height: 15em;
+  					object-fit: cover;
+  					display: block;
 				}
 
 				.tiles article > .image:before {
@@ -2642,24 +2644,23 @@ input, select, textarea {
 				}
 
 			.tiles article > a {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				transition: background-color 0.5s ease, transform 0.5s ease;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				padding: 1em;
-				border-radius: 4px;
-				border-bottom: 0;
-				color: #ffffff;
-				text-align: center;
-				text-decoration: none;
-				z-index: 3;
-			}
+  					display: flex;
+  					flex-direction: column;
+  					justify-content: center;
+  					align-items: center;
+  					position: absolute;
+  					top: 0;
+  					left: 0;
+  					width: 100%;
+  					height: 100%;
+  					padding: 1em;
+  					border-radius: 4px;
+  					color: #ffffff;
+  					text-align: center;
+  					text-decoration: none;
+  					z-index: 3;
+  					transition: background-color 0.5s ease, transform 0.5s ease;
+				}
 
 				.tiles article > a > :last-child {
 					margin: 0;
@@ -2684,16 +2685,17 @@ input, select, textarea {
 				}
 
 				.tiles article > a .content {
-					opacity: 0;
-					transition: opacity 0.3s ease;
-					font-size: 0.95em;
-					margin-top: 0em;
-					position: relative;
-					z-index: 1;
+  					max-height: 0;
+  					opacity: 0;
+  					margin-top: 0.35em;
+  					line-height: 1.4;
+  					transition: max-height 0.5s ease, opacity 0.5s ease;
+  					overflow: hidden;
 				}
 
 				.tiles article:hover > a .content {
-					opacity: 1;
+  					max-height: 15em;
+  					opacity: 1;
 				}
 
 		.tiles article.style1 > .image:before { background-color: #f2849e; }
