@@ -3281,14 +3281,16 @@ body.is-preload .tiles article {
   color: #f2849e;
 }
 
-a:hover,
-a:focus {
-  color: #629763 !important;
-}
 
 #main {
   background-image: url('../../images/main_background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+a:hover,
+a:active,
+a:focus {
+  color: inherit !important;
+  text-decoration: none !important;
 }
