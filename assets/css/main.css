@@ -3223,6 +3223,8 @@ body.is-preload .tiles article {
 .tiles article:hover .content {
   opacity: 1;
 }
+
+/* Updated Project Grid Section */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -3242,13 +3244,25 @@ body.is-preload .tiles article {
   color: inherit;
 }
 
+/* New version of .project-image using <img> instead of background */
 .project-image {
   width: 100%;
   height: 8em;
+  overflow: hidden;
   border-radius: 6px;
-  background-size: cover;
-  background-position: center;
   margin-bottom: 0.5em;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover img {
+  transform: scale(1.05);
 }
 
 .project h2 {
