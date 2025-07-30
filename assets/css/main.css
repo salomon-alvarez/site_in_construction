@@ -3280,3 +3280,8 @@ body.is-preload .tiles article {
 .project a:hover h2 {
   color: #f2849e;
 }
+
+a:hover,
+a:focus {
+  color: #629763 !important;
+}
