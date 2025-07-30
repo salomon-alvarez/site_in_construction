@@ -3288,17 +3288,30 @@ body.is-preload .tiles article {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* Disable all link hover colors site-wide */
 a:hover,
 a:active,
-a:focus,
-button:hover,
-.button:hover,
-.icon:hover,
-.menu-toggle:hover,
-input[type="submit"]:hover {
+a:focus {
   color: inherit !important;
-  background: inherit !important;
-  border-color: inherit !important;
   text-decoration: none !important;
+}
+
+/* Fix button hover styles: keep border and background */
+.button:hover,
+input[type="submit"]:hover,
+.button:active,
+input[type="submit"]:active {
+  color: inherit !important;
+  background: transparent !important;
+  border: 2px solid inherit !important;
+  box-shadow: none !important;
+}
+
+/* Disable hover color on icons (like the mobile menu icon) */
+.icon:hover,
+.menu-toggle:hover {
+  color: inherit !important;
+  background: none !important;
   box-shadow: none !important;
 }
