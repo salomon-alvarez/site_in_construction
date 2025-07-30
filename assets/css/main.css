@@ -2591,6 +2591,7 @@ input, select, textarea {
 	color: #ffffff !important;
 	transition: background-color 0.5s ease, transform 0.5s ease;
 	z-index: 3;
+	box-sizing: border-box;
 }
 
 .tiles article > a h2 {
