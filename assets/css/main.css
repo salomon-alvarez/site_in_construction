@@ -2571,7 +2571,7 @@ input, select, textarea {
 .tiles article {
 	transition: transform 0.5s ease, opacity 0.5s ease;
 	position: relative;
-	width: calc(33.33333% - 2.5em);
+	width: calc(33.33333% - 4em);
 	margin: 2.5em 0 0 2.5em;
 	height: 3em; /* Reduced height for horizontal rectangle */
 	border-radius: 10px;
