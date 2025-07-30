@@ -3223,4 +3223,46 @@ body.is-preload .tiles article {
 .tiles article:hover .content {
   opacity: 1;
 }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+  margin-top: 2em;
+}
 
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.project a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-image {
+  width: 100%;
+  height: 8em;
+  border-radius: 6px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 0.5em;
+}
+
+.project h2 {
+  font-size: 1.25em;
+  margin: 0 0 0.4em 0;
+  transition: color 0.3s ease;
+}
+
+.project p {
+  margin: 0;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.project a:hover h2 {
+  color: #f2849e;
+}
