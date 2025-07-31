@@ -3334,3 +3334,18 @@ input[type="submit"]:active,
   box-shadow: none !important;
   text-decoration: none !important;
 }
+
+.button,
+input[type="submit"] {
+  border: 2px solid currentColor !important;
+}
+
+.button:hover,
+input[type="submit"]:hover,
+.button:active,
+input[type="submit"]:active {
+  color: inherit !important;
+  background-color: transparent !important;
+  border: 2px solid currentColor !important;
+  box-shadow: none !important;
+}
