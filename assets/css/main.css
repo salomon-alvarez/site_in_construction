@@ -3316,3 +3316,21 @@ input[type="submit"]:active {
   background: none !important;
   box-shadow: none !important;
 }
+
+/* Strongest override for all hover effects */
+a:hover,
+a:active,
+a:focus,
+.project a:hover h2,
+.button:hover,
+.button:active,
+input[type="submit"]:hover,
+input[type="submit"]:active,
+.icon:hover,
+.menu-toggle:hover {
+  color: inherit !important;
+  border-color: inherit !important;
+  background-color: inherit !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
