@@ -3317,15 +3317,11 @@ input[type="submit"]:active {
   box-shadow: none !important;
 }
 
-/* Strongest override for all hover effects */
+/* Strongest override for all hover effects (links, icons, etc.) */
 a:hover,
 a:active,
 a:focus,
 .project a:hover h2,
-.button:hover,
-.button:active,
-input[type="submit"]:hover,
-input[type="submit"]:active,
 .icon:hover,
 .menu-toggle:hover {
   color: inherit !important;
@@ -3335,17 +3331,23 @@ input[type="submit"]:active,
   text-decoration: none !important;
 }
 
+/* Consistent button styling */
 .button,
 input[type="submit"] {
-  border: 2px solid currentColor !important;
+  border: 2px solid currentColor;
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+  transition: none;
 }
 
+/* Disable all button hover effects */
 .button:hover,
 input[type="submit"]:hover,
 .button:active,
 input[type="submit"]:active {
-  color: inherit !important;
-  background-color: transparent !important;
   border: 2px solid currentColor !important;
+  background: transparent !important;
+  color: inherit !important;
   box-shadow: none !important;
 }
