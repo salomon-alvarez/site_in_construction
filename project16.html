@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Analytics – Salomon Alvarez</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
 
+    <header id="header">
+        <div class="inner">
+            <a href="index.html" class="logo">
+                <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Salomon Alvarez</span>
+            </a>
+            <nav>
+                <ul><li><a href="#menu">Menu</a></li></ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <div class="inner">
+            <header>
+                <h1>Customer Analytics: Segmentation, Engagement & Campaign Response</h1>
+                <p><strong>This project applied customer segmentation, engagement tracking, and predictive modeling to identify key drivers of marketing campaign success.</strong></p>
+            </header>
+
+            <p><strong>Goal:</strong> Build actionable customer insights using segmentation, engagement metrics, and predictive modeling to guide targeting and retention strategy.</p>
+
+            <h2>Approach</h2>
+            <ul>
+                <li>Data cleaning & preparation (null handling, outlier detection, column standardization, engineered IDs).</li>
+                <li>Feature engineering: created <code>Spend_Total</code> including gold products, campaign conversion rates, and re-engagement KPIs (30/60/90 days).</li>
+                <li>Customer segmentation: RFM analysis in SQL, mapped into labeled segments (“Champions,” “At Risk”).</li>
+                <li>Predictive modeling: Random Forest and linear regression to evaluate campaign response and total spend.</li>
+                <li>Model interpretation: feature importance ranking, partial dependence plots, and transformations for skewed data.</li>
+            </ul>
+            <p>Full EDA and detailed data preparation steps are available in the <a href="https://github.com/salomon-alvarez/site_in_construction" target="_blank">GitHub README</a>.</p>
+
+            <h2>Results</h2>
+            <ul>
+                <li><strong>Engagement:</strong> 32% of customers re-engaged within 30 days; 58% within 90 days.</li>
+                <li><strong>Campaigns:</strong> Conversion averaged 7%, with the last campaign reaching 15%.</li>
+                <li><strong>Segmentation:</strong> RFM identified ~20% “Champions,” ~35% “At Risk.”</li>
+                <li><strong>Predictors:</strong> Random Forest ranked <code>Purchases_Web</code>, <code>Income</code>, and <code>Kids_Count</code> among the strongest campaign response drivers.</li>
+                <li><strong>Regression:</strong> Significant predictors included online purchase behavior and income.</li>
+            </ul>
+
+            <img src="images/rfm_segments.png" alt="RFM Segments" style="width:100%; margin: 2em 0;" />
+            <img src="images/campaign_conversion.png" alt="Campaign Conversion Rates" style="width:100%; margin: 2em 0;" />
+            <img src="images/feature_importance.png" alt="Feature Importance for Campaign Response" style="width:100%; margin: 2em 0;" />
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>Segmentation clearly separated high-value “Champions” from disengaged customers.</li>
+                <li>Campaign conversion varied widely; recent campaigns showed strongest impact.</li>
+                <li>Engagement metrics and predictive modeling highlighted actionable drivers for targeting.</li>
+            </ul>
+
+            <p><a href="https://github.com/salomon-alvarez/site_in_construction" target="_blank">View the GitHub repository</a></p>
+        </div>
+    </div>
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
