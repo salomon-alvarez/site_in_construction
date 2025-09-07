@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temperature Forecasting with Machine Learning – Salomon Alvarez</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
+  <header id="header">
+    <div class="inner">
+      <a href="index.html" class="logo">
+        <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Salomon Alvarez</span>
+      </a>
+      <nav><ul><li><a href="#menu">Menu</a></li></ul></nav>
+    </div>
+  </header>
 
+  <nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="main">
+    <div class="inner">
+      <header>
+        <h1>Temperature Forecasting with Machine Learning</h1>
+        <p><strong>Built and evaluated Gradient Boosting, XGBoost, and Neural Network models to predict temperature using weather time series data. Achieved reliable forecasts and validated model accuracy using both traditional and PCA-reduced datasets. Time series forecasting (ARIMA) also performed for short-term predictions.</strong></p>
+      </header>
+
+      <h2>1. Project Overview</h2>
+      <p>This project applies machine learning techniques to forecast temperature based on weather data collected at the Max Planck Institute for Biogeochemistry. It combines regression models, PCA, and time series forecasting to identify patterns and generate predictions with real-world implications.</p>
+
+      <h2>2. The Dataset</h2>
+      <p>The dataset includes 14 weather-related variables recorded every 10 minutes between 2009 and 2016 in Jena, Germany. Variables include temperature, atmospheric pressure, humidity, wind direction, and more.</p>
+      <img src="images/project15/data.png" alt="Dataset Overview" style="max-width:800px; width:100%; margin: 2em 0;" />
+
+      <h3>Distributions and Time Series</h3>
+      <img src="images/project15/d_1.png" alt="Distributions 1" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/d_2.png" alt="Distributions 2" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/d_3.png" alt="Distributions 3" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/temp.png" alt="Temperature Time Series" style="max-width:800px; width:100%; margin: 2em 0;" />
+
+      <h3>Correlation Analysis</h3>
+      <img src="images/project15/corr.png" alt="Correlation Table" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/heat.png" alt="Correlation Heatmap" style="max-width:800px; width:100%; margin: 2em 0;" />
+
+      <h2>3. Machine Learning Models</h2>
+      <p>Data normalization was applied prior to training.</p>
+      <img src="images/project15/normalization.png" alt="Normalization" style="max-width:800px; width:100%; margin: 2em 0;" />
+
+      <h3>Gradient Boosting</h3>
+      <img src="images/project15/gradient_boosting.png" alt="Gradient Boosting Model" style="max-width:800px; width:100%; margin: 2em 0;" />
+
+      <h3>XGBoost</h3>
+      <img src="images/project15/xg_boost.png" alt="XGBoost Model" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/xg_boost_feature_importance.png" alt="XGBoost Feature Importance" style="max-width:800px; width:100%; margin: 2em 0;" />
+
+      <h3>Neural Network</h3>
+      <img src="images/project15/neural_net.png" alt="Neural Network Architecture" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/neural_net_res1.png" alt="Neural Net Loss" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/neural_net_res2.png" alt="Neural Net Validation" style="max-width:800px; width:100%; margin: 2em 0;" />
+
+      <h3>Model Comparison</h3>
+      <img src="images/project15/ml_model_results.png" alt="Model Results" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/ml_model_results2.png" alt="Model MSE" style="max-width:800px; width:100%; margin: 2em 0;" />
+
+      <h2>4. PCA + Re-Training</h2>
+      <p>PCA reduced features from 13 to 6 components. Models were retrained with reduced dataset.</p>
+      <img src="images/project15/pca.png" alt="PCA Plot" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/pca2.png" alt="PCA Components" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/pca_results1.png" alt="PCA Model Results" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/pca_results2.png" alt="PCA MSE" style="max-width:800px; width:100%; margin: 2em 0;" />
+
+      <p>Conclusion: PCA did not improve model accuracy in this case.</p>
+
+      <h2>5. Time Series Forecasting</h2>
+      <p>An ARIMA model was used to forecast future temperature values, five steps (50 minutes) into the future.</p>
+      <img src="images/project15/arima_noise.png" alt="ARIMA Noise" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/arima_trend.png" alt="ARIMA Trend" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/arima1.png" alt="ARIMA Setup" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/arima2.png" alt="ARIMA Forecast Plot" style="max-width:800px; width:100%; margin: 2em 0;" />
+      <img src="images/project15/arima3.png" alt="ARIMA 5-Step Forecast" style="max-width:800px; width:100%; margin: 2em 0;" />
+
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
