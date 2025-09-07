@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crypto Sentiment Analysis with NLP – Salomon Alvarez</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
 
+  <header id="header">
+    <div class="inner">
+      <a href="index.html" class="logo">
+        <span class="symbol"><img src="images/logo.svg" alt="" /></span>
+        <span class="title">Salomon Alvarez</span>
+      </a>
+      <nav>
+        <ul><li><a href="#menu">Menu</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="main">
+    <div class="inner">
+
+      <header>
+        <h1>Crypto News Sentiment Analysis using NLP</h1>
+        <p><strong>Analyzed Bitcoin and Ethereum news headlines using natural language processing (NLP) to evaluate sentiment trends, highlight key entities, and understand public perception across cryptocurrencies.</strong></p>
+      </header>
+
+      <h2>Project Overview</h2>
+      <p>This project applied a suite of NLP techniques to real-time news headlines related to Bitcoin and Ethereum. Using sentiment scoring, token frequency, and named entity recognition, I extracted insights about how each coin was being portrayed in the media. The analysis was performed with Python using libraries such as <code>vaderSentiment</code>, <code>NLTK</code>, and <code>spaCy</code>, and visualized through word clouds and frequency charts.</p>
+
+      <h2>1. Sentiment Analysis Results</h2>
+      <p>Using the VADER sentiment analyzer, I computed polarity scores for dozens of articles per coin. The key findings are summarized below:</p>
+
+      <ul>
+        <li><strong>Highest mean positive score:</strong> Ethereum (0.0667)</li>
+        <li><strong>Highest individual negative score:</strong> Bitcoin (0.10)</li>
+        <li><strong>Highest individual positive score:</strong> Ethereum (0.173)</li>
+        <li><strong>Mean negative scores:</strong> Bitcoin – 0.0148, Ethereum – 0.0203</li>
+      </ul>
+
+      <img src="images/project17/sentiment_scores.png" alt="Sentiment Scores Comparison" style="width:90%; margin: 2em 0;" />
+
+      <h2>2. Natural Language Processing</h2>
+      <p>Each article was tokenized, and stop words were removed. I generated n-grams and calculated word frequencies to identify the most common terms associated with each cryptocurrency.</p>
+
+      <h3>Most Frequent Words</h3>
+      <p><strong>Bitcoin</strong>: price, bitcoin, crypto, digital, currency, market, blockchain...</p>
+      <p><strong>Ethereum</strong>: ethereum, blockchain, defi, price, crypto, platform...</p>
+
+      <h3>Word Clouds</h3>
+      <p>Word clouds were generated to visualize the most prominent words in the headlines for each coin.</p>
+
+      <img src="images/project17/bitcoin_wordcloud.png" alt="Bitcoin Word Cloud" style="width:48%; margin: 1em 1em 2em 0;" />
+      <img src="images/project17/ethereum_wordcloud.png" alt="Ethereum Word Cloud" style="width:48%; margin: 1em 0 2em 0;" />
+
+      <h2>3. Named Entity Recognition (NER)</h2>
+      <p>Using spaCy’s NER pipeline, I identified key organizations and entities mentioned alongside each coin. These included companies, financial institutions, and influential individuals.</p>
+
+      <img src="images/project17/entities_bitcoin.png" alt="Bitcoin Entities" style="width:90%; margin: 2em 0;" />
+      <img src="images/project17/entities_ethereum.png" alt="Ethereum Entities" style="width:90%; margin: 2em 0;" />
+
+      <h2>Conclusion</h2>
+      <p>This project demonstrates how Natural Language Processing can be used to understand crypto market sentiment through news media. Ethereum showed a slightly more positive tone across sources, while Bitcoin headlines exhibited more extreme polarity. These tools provide a scalable way to measure public perception and could be extended into more complex trading signal models based on news data.</p>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
