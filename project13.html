@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Investment Projection with Monte Carlo Simulation – Salomon Alvarez</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
+  <header id="header">
+    <div class="inner">
+      <a href="index.html" class="logo">
+        <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Salomon Alvarez</span>
+      </a>
+      <nav>
+        <ul><li><a href="#menu">Menu</a></li></ul>
+      </nav>
+    </div>
+  </header>
 
+  <nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="main">
+    <div class="inner">
+      <header>
+        <h1>Investment Projection with Monte Carlo Simulation</h1>
+        <p><strong>Simulated long-term financial outcomes to support retirement planning using Monte Carlo techniques.</strong></p>
+      </header>
+
+      <h2>Summary</h2>
+      <p>This project uses transaction data and simulated financial forecasts to assess retirement readiness. It leverages Plaid API for budget insights, IEX API for stock price history, and Monte Carlo simulations to evaluate portfolio performance across multiple scenarios.</p>
+
+      <h2>1. Budget Analysis</h2>
+      <p>Transaction data was pulled using the Plaid API and categorized into expense types. The summary below shows total amounts spent per category:</p>
+      <table>
+        <thead><tr><th>Category</th><th>Amount ($)</th></tr></thead>
+        <tbody>
+          <tr><td>Food and Drink</td><td>3317.19</td></tr>
+          <tr><td>Payment</td><td>6310.50</td></tr>
+          <tr><td>Recreation</td><td>235.50</td></tr>
+          <tr><td>Shops</td><td>1500.00</td></tr>
+          <tr><td>Transfer</td><td>20537.34</td></tr>
+          <tr><td>Travel</td><td>41.52</td></tr>
+        </tbody>
+      </table>
+      <p><strong>The biggest expense was Transfer, the least was Travel.</strong></p>
+
+      <img src="images/project13/pie.png" alt="Expenses by Category" style="width:100%; margin: 2em 0;" />
+      <img src="images/project13/bars.png" alt="Expense Frequency" style="width:100%; margin: 2em 0;" />
+
+      <h3>Monthly Summary</h3>
+      <p>The following table summarizes expenses per month. Each month had identical totals.</p>
+      <table>
+        <thead><tr><th>Month</th><th>Expenses ($)</th></tr></thead>
+        <tbody>
+          <tr><td>July</td><td>9135.51</td></tr>
+          <tr><td>August</td><td>9135.51</td></tr>
+          <tr><td>September</td><td>9135.51</td></tr>
+        </tbody>
+      </table>
+
+      <h2>2. Monte Carlo Simulation</h2>
+      <p>Using historical stock data pulled via the IEX API, a Monte Carlo simulation was run to project returns for a portfolio over 20 and 30 years.</p>
+      <img src="images/project13/3.png" alt="Monte Carlo Simulation" style="width:100%; margin: 2em 0;" />
+
+      <h2>3. Retirement Plan Forecasting</h2>
+      <p>The simulation results were used to forecast different return scenarios over a 30-year horizon.</p>
+      <img src="images/project13/2.png" alt="90% Confidence Interval" style="width:100%; margin: 2em 0;" />
+
+      <ul>
+        <li>10th percentile return: 1.64x</li>
+        <li>50th percentile return: 3.78x</li>
+        <li>90th percentile return: 6.89x</li>
+      </ul>
+      <ul>
+        <li>Initial $20,000 investment:</li>
+        <li>10th percentile: $52,754.46</li>
+        <li>50th percentile: $95,531.40</li>
+        <li>90th percentile: $157,765.95</li>
+      </ul>
+      <p>With a 4% withdrawal rate:</p>
+      <ul>
+        <li>Projected annual income: $1,913.69</li>
+        <li>Projected annual needs: $6,085</li>
+      </ul>
+      <p>A 50% increase in investment would raise projected income to $2,870.53</p>
+
+      <img src="images/project13/1.png" alt="Cumulative Returns by Percentile" style="width:100%; margin: 2em 0;" />
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
