@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Clustering – Salomon Alvarez</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
 
+    <header id="header">
+        <div class="inner">
+            <a href="index.html" class="logo">
+                <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Salomon Alvarez</span>
+            </a>
+            <nav>
+                <ul><li><a href="#menu">Menu</a></li></ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <div class="inner">
+            <header>
+                <h1>Crypto Clustering Using K-Means & PCA</h1>
+                <p><strong>Clustered over 1,200 cryptocurrencies using unsupervised learning and visualized insights in 3D with Plotly. Deployed using Amazon SageMaker.</strong></p>
+            </header>
+
+            <p>
+                This guided project simulated a client-facing scenario in which a Big Four consulting firm assists a large investment bank in exploring the cryptocurrency market for a new portfolio product. 
+                The client needed a meaningful classification of tradeable cryptocurrencies to guide future investment strategies. The solution used unsupervised machine learning—specifically K-Means clustering—on preprocessed crypto data, followed by visualization and interpretation of the clusters.
+            </p>
+
+            <h2>Process Overview</h2>
+            <ul>
+                <li>Fetched cryptocurrency metadata from the CryptoCompare API.</li>
+                <li>Preprocessed the data by cleaning null values, converting categorical data using dummy variables, and scaling numerical features.</li>
+                <li>Applied PCA (Principal Component Analysis) to reduce dimensionality to three key components for visualization.</li>
+                <li>Used the Elbow Method to determine optimal cluster count, then performed K-Means clustering.</li>
+                <li>Visualized the clustered data in 3D using Plotly Express and created additional scatter plots and summary tables.</li>
+                <li>Deployed and tested the notebook using AWS SageMaker.</li>
+            </ul>
+
+            <h2>Finding the Optimal Number of Clusters</h2>
+            <p>The Elbow Curve helped determine the optimal number of clusters (k) by plotting the inertia values across multiple k values.</p>
+            <img src="images/project11/p11_elbow_curve.png" alt="Elbow Curve" style="width:100%; margin: 2em 0;" />
+
+            <h2>3D Visualization of Crypto Clusters</h2>
+            <p>The PCA-reduced data was used to visualize clusters of cryptocurrencies in three dimensions. Each point represents a crypto asset, colored by cluster assignment.</p>
+            <img src="images/project11/p11_3dscatter.png" alt="3D PCA Scatter" style="width:100%; margin: 2em 0;" />
+
+            <h2>Clustered Dataset Summary</h2>
+            <p>Below is a summary of the clustered dataset, which includes algorithm type, proof type, total coins mined, and coin supply—together with the principal components used for modeling.</p>
+            <img src="images/project11/p11_clusters_table.png" alt="Cluster Table" style="width:100%; margin: 2em 0;" />
+
+            <h2>Total Coins Mined vs. Supply</h2>
+            <p>This scatter plot contrasts the total number of coins mined with total coin supply across the clusters, revealing some outliers and insightful patterns.</p>
+            <img src="images/project11/p11_supply_vs_mined.png" alt="Supply vs. Mined" style="width:100%; margin: 2em 0;" />
+
+            <h2>Conclusion</h2>
+            <p>
+                This project demonstrated the potential of unsupervised learning to organize and classify large-scale cryptocurrency data. 
+                Through dimensionality reduction and clustering, we uncovered natural groupings and traits among crypto assets—delivering insights useful for portfolio design and investment decisions. 
+                Using AWS SageMaker ensured scalability and production-ready modeling.
+            </p>
+
+            <p><a href="https://github.com/salomon-alvarez/your_repo_name" target="_blank">View the GitHub repository</a></p>
+        </div>
+    </div>
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
