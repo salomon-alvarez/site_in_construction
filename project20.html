@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cryptocurrency Price Prediction Using RNN – Salomón Alvarez</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
 
+  <header id="header">
+    <div class="inner">
+      <a href="index.html" class="logo">
+        <span class="symbol"><img src="images/logo.svg" alt="" /></span>
+        <span class="title">Salomón Alvarez</span>
+      </a>
+      <nav>
+        <ul><li><a href="#menu">Menu</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="main">
+    <div class="inner">
+
+      <header>
+        <h1>Cryptocurrency Price Forecasting with Recurrent Neural Networks</h1>
+        <p><strong>Developed and compared two LSTM models to forecast Bitcoin prices, evaluating whether sentiment data (Fear and Greed Index) provides a predictive edge over historical closing prices. The closing price-based model achieved significantly better performance, with over 5x lower loss.</strong></p>
+      </header>
+
+      <h2>Project Overview</h2>
+      <p>Cryptocurrency markets are highly volatile and often driven by sentiment. This project investigates whether social sentiment indicators like the Crypto Fear and Greed Index (FNG) can improve predictive models for Bitcoin closing prices compared to traditional time series models using historical closing prices.</p>
+
+      <p>Two separate Long Short-Term Memory (LSTM) Recurrent Neural Network models were built:</p>
+      <ul>
+        <li><strong>Model 1:</strong> Predicts BTC closing prices using a sequence of previous <strong>closing prices</strong></li>
+        <li><strong>Model 2:</strong> Predicts BTC closing prices using a sequence of <strong>Fear and Greed Index (FNG)</strong> values</li>
+      </ul>
+
+      <h2>Data Preparation</h2>
+      <p>Each model was trained on 70% of the dataset and tested on the remaining 30%. The data was scaled using MinMaxScaler and reshaped into the required LSTM input shape: <code>(samples, time steps, features)</code>. Window sizes of 1, 2, and 10 were tested to evaluate model performance.</p>
+
+      <h2>Model Architecture</h2>
+      <p>Both models used the same LSTM architecture for consistency in comparison:</p>
+      <ul>
+        <li>One LSTM layer with 50 units</li>
+        <li>Dropout for regularization</li>
+        <li>Dense output layer with 1 neuron (for the next predicted closing price)</li>
+      </ul>
+
+      <h2>Results Summary</h2>
+      <p>The model based on <strong>closing prices significantly outperformed</strong> the sentiment-based model across all metrics:</p>
+      <ul>
+        <li><strong>Lowest loss:</strong> 0.0363 (Closing Prices) vs 0.2016 (FNG Sentiment)</li>
+        <li><strong>Better time-series tracking:</strong> Visual comparison shows the closing prices model aligns more closely with real values</li>
+        <li><strong>Best window size:</strong> Window size = 1 achieved the lowest loss in both models</li>
+      </ul>
+
+      <h2>Visual Comparison of Predictions</h2>
+
+      <h3>Predicted vs Real Prices – Closing Price Model</h3>
+      <img src="images/project20/image1.png" alt="Closing Price Model Prediction" style="width:100%; margin: 2em 0;" />
+
+      <h3>Predicted vs Real Prices – Fear and Greed Model</h3>
+      <img src="images/project20/image2.png" alt="FNG Model Prediction" style="width:100%; margin: 2em 0;" />
+
+      <h2>Loss Comparison by Window Size</h2>
+
+      <h3>Fear and Greed Model</h3>
+      <ul>
+        <li>Window = 1 → Loss = 0.2016</li>
+        <li>Window = 2 → Loss = 0.2095</li>
+        <li>Window = 10 → Loss = 0.2709</li>
+      </ul>
+
+      <h3>Closing Prices Model</h3>
+      <ul>
+        <li>Window = 1 → Loss = 0.0363</li>
+        <li>Window = 2 → Loss = 0.0389</li>
+        <li>Window = 10 → Loss = 0.1026</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>This analysis confirms that sentiment indicators like the Crypto Fear and Greed Index <strong>do not outperform traditional price-based models</strong> for predicting short-term cryptocurrency trends. The LSTM model trained on historical closing prices provided much more accurate forecasts with a significantly lower loss, and better alignment with actual prices over time.</p>
+
+      <p>While sentiment analysis remains valuable for broader market understanding, <strong>historical price data currently offers more reliable predictive power</strong> for Bitcoin when using deep learning models like LSTM.</p>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
