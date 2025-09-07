@@ -1,72 +1,102 @@
-<section class="project">
-  <h2>Investment Portfolios Analysis</h2>
-  <p><strong>by Salomón Ysmáyel</strong></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Investment Portfolios Analysis – Salomon Alvarez</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
 
-  <p>
-    Can algorithmic trading portfolios outperform both the stock market and portfolios managed by elite investors like Warren Buffett? This project dives deep into that question by comparing several portfolios on key metrics like volatility, Sharpe ratio, and cumulative returns. The results? <strong>Algo1 and a custom portfolio outperformed the S&amp;P 500 and even some famous whale portfolios in both risk-adjusted and absolute terms</strong>. Let’s explore how and why.
-  </p>
+  <header id="header">
+    <div class="inner">
+      <a href="index.html" class="logo">
+        <span class="symbol"><img src="images/logo.svg" alt="" /></span>
+        <span class="title">Salomon Alvarez</span>
+      </a>
+      <nav>
+        <ul><li><a href="#menu">Menu</a></li></ul>
+      </nav>
+    </div>
+  </header>
 
-  <h3>Overview</h3>
-  <p>
-    This analysis compares multiple investment strategies:
+  <nav id="menu">
+    <h2>Menu</h2>
     <ul>
-      <li>Two algorithmic trading portfolios: Algo1 and Algo2</li>
-      <li>Whale investor portfolios: Berkshire Hathaway, Paulson &amp; Co., etc.</li>
-      <li>The market index (S&amp;P 500)</li>
-      <li>A custom portfolio</li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    Libraries used: Pandas, NumPy, and Matplotlib.
-  </p>
+  </nav>
 
-  <h3>Portfolios Returns Data</h3>
-  <img src="/images/project19/1.png" alt="Portfolios Returns Data">
+  <div id="main">
+    <div class="inner">
 
-  <h3>Daily Returns</h3>
-  <img src="/images/project19/2.png" alt="Daily Returns">
+      <header>
+        <h1>Investment Portfolios Analysis</h1>
+        <p><strong>Compared returns, volatility, Sharpe ratios, and risk of portfolios from hedge funds, whales like Buffett, algorithmic strategies, and a custom-built portfolio — finding one strategy that consistently beat the S&P 500.</strong></p>
+      </header>
 
-  <h3>Cumulative Returns</h3>
-  <img src="/images/project19/3.png" alt="Cumulative Returns">
+      <h2>Project Overview</h2>
+      <p>In this analysis, I examined the performance of several portfolios, including algorithmic strategies (Algo1 and Algo2), portfolios from renowned institutional investors ("whales"), and a custom portfolio I created. I compared them against the S&P 500 across key financial metrics like cumulative return, volatility, standard deviation, correlation, Sharpe ratio, and rolling beta.</p>
 
-  <h3>Quantitative Analysis</h3>
-  <p>
-    All portfolios eventually outperform the S&amp;P 500 in cumulative returns. Algo1 consistently performs well, often staying ahead even during downturns. Around April 2016, only Algo1 remained ahead of the S&amp;P 500.
-  </p>
+      <h2>Performance Analysis</h2>
+      <p>We began by visualizing cumulative returns to compare how each portfolio performed over time.</p>
+      <img src="images/project19/3.png" alt="Cumulative Returns" style="width:100%; margin: 2em 0;" />
 
-  <h3>Risk Analysis</h3>
-  <p>
-    A box plot analysis revealed that <strong>Paulson &amp; Co.</strong> has the smallest spread in daily returns, while <strong>Berkshire Hathaway</strong> has the widest, indicating greater variability in performance.
-  </p>
-  <p>
-    Standard deviation analysis showed that <strong>Berkshire Hathaway</strong> and <strong>Tiger Global</strong> are riskier than the S&amp;P 500.
-  </p>
+      <p>All portfolios eventually outperformed the S&P 500, but not throughout the entire timeline. Around April 2016, the S&P briefly outpaced all except Algo1. The algorithmic strategies showed promising consistency in long-term returns.</p>
 
-  <h3>Rolling Statistics</h3>
-  <p>
-    During mid-2015 to early 2016, Algo1's risk was decreasing while the S&amp;P 500's was increasing. This suggests uncorrelated or even counter-cyclical behavior in some portfolios, although in general, risk trends align across all portfolios.
-  </p>
+      <h2>Risk Analysis</h2>
+      <p>The daily returns and standard deviations gave us insight into risk and variability.</p>
+      <img src="images/project19/2.png" alt="Daily Returns" style="width:100%; margin: 2em 0;" />
 
-  <p>
-    Correlation analysis showed <strong>Paulson &amp; Co.</strong> has the strongest correlation with the S&amp;P 500, albeit modest.
-  </p>
+      <p>Box plots revealed that <strong>PAULSON & CO.INC.</strong> had the smallest spread in returns, while <strong>BERKSHIRE HATHAWAY INC.</strong> had the largest — making it the riskiest. This was confirmed with standard deviation values.</p>
 
-  <p>
-    A rolling beta plot of Berkshire Hathaway vs. S&amp;P 500 showed it becomes more aggressive in safer markets and conservative in riskier ones — a smart, adaptive behavior.
-  </p>
+      <h2>Rolling Standard Deviation</h2>
+      <p>Rolling standard deviations show how risk fluctuates over time. Generally, all portfolios followed similar risk trends, but with differences in intensity and timing.</p>
+      <p>For example, between July 2015 and January 2016, S&P 500 risk increased while Algo1’s risk actually decreased — an example of inverse behavior.</p>
 
-  <img src="/images/project19/network_create.png" alt="Portfolio Risk Network">
+      <h2>Correlation to Market</h2>
+      <p>We computed correlations to understand how closely each portfolio mimicked the S&P 500. <strong>PAULSON & CO.INC.</strong> had the highest correlation to the market, suggesting it tracks the index most closely.</p>
 
-  <h3>Sharpe Ratios</h3>
-  <p>
-    Sharpe ratios were calculated using daily returns. <strong>Algo1</strong> achieved the highest Sharpe ratio, confirming its ability to produce superior risk-adjusted returns. <strong>Algo2</strong> also outperformed most whale portfolios and the S&amp;P 500, except for Berkshire Hathaway.
-  </p>
+      <h2>Rolling Beta</h2>
+      <p>By plotting the rolling beta for <strong>BERKSHIRE HATHAWAY INC.</strong>, we could evaluate its sensitivity to the S&P 500. Interestingly, when market risk was low, the beta approached 1 — suggesting alignment. But when the market became volatile, Berkshire reduced exposure, showing a contrarian risk approach.</p>
 
-  <h3>Custom Portfolio Analysis</h3>
-  <p>
-    The custom portfolio outshone all others in cumulative returns, though with higher volatility. Its beta increases when the market's risk decreases, and it shares strong return correlations with Algo2 (corr = 0.755). Its high Sharpe ratio confirms that the reward was worth the additional risk.
-  </p>
+      <h2>Sharpe Ratios</h2>
+      <p>Sharpe ratios help determine return relative to risk. Here’s how the portfolios compared:</p>
+      <ul>
+        <li><strong>Algo1</strong> had the highest Sharpe ratio, outperforming all others</li>
+        <li><strong>Algo2</strong> came next, beating all except Berkshire Hathaway and Algo1</li>
+      </ul>
 
-  <h3>Conclusion</h3>
-  <p>
-    The analysis demonstrates that algorithmic strategies like Algo1 can consistently outperform traditional portfolios on both absolute and risk-adjusted metrics. Moreover, thoughtful construction of a custom portfolio can also rival or surpass professional strategies if well-balanced for risk.
-  </p>
-</section>
+      <h2>Custom Portfolio Analysis</h2>
+      <p>I created a custom portfolio from handpicked stocks, calculated the daily returns, and incorporated it into the comparison framework.</p>
+      <p><strong>Results:</strong></p>
+      <ul>
+        <li>It had the highest cumulative return over the entire period</li>
+        <li>Its risk was higher than all but Berkshire Hathaway</li>
+        <li>Sharpe ratio was second only to Algo1</li>
+        <li>Rolling beta increased as S&P 500 became more stable</li>
+        <li>Most correlated to Algo2 (corr = 0.755)</li>
+      </ul>
+
+      <img src="images/project19/1.png" alt="Returns Overview" style="width:100%; margin: 2em 0;" />
+
+      <h2>Conclusion</h2>
+      <p>Both algorithmic strategies — especially Algo1 — delivered consistent returns with superior risk-adjusted performance. The custom portfolio proved to be a strong contender as well, confirming that with thoughtful stock selection, individual investors can potentially outperform institutional strategies.</p>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
