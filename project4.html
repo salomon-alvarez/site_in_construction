@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistical Analysis & Hypothesis Testing – Salomon Alvarez</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
 
+    <header id="header">
+        <div class="inner">
+            <a href="index.html" class="logo">
+                <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Salomon Alvarez</span>
+            </a>
+            <nav>
+                <ul><li><a href="#menu">Menu</a></li></ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <div class="inner">
+            <header>
+                <h1>Statistical Analysis & Hypothesis Testing</h1>
+                <p><strong>Is Tesla a tech company or a traditional automaker? This study applies statistical testing to explore Tesla’s identity through return behaviors compared to industry peers.</strong></p>
+            </header>
+
+            <h2>Project Overview</h2>
+            <p>This project was completed at Columbia University for IEOR E4150 with Professor Dr. A. B. Dieker. It applies a series of statistical tests and regressions to assess whether Tesla behaves more like a tech stock or an automaker.</p>
+
+            <h2>Dataset</h2>
+            <p>The dataset includes daily open and close stock prices from 2018-11-27 to 2020-11-25 for 9 companies across the automotive and technology sectors, plus the NASDAQ index. Log returns were used for the analysis.</p>
+
+            <ul>
+                <li><strong>Automotive:</strong> Tesla (TSLA), Daimler (DAI.DE), Toyota (TM), GM, Ford (F)</li>
+                <li><strong>Technology:</strong> Apple (AAPL), Google (GOOG), Dell, Microsoft (MSFT)</li>
+                <li><strong>Index:</strong> NASDAQ Composite (^IXIC)</li>
+            </ul>
+
+            <h2>Methodology</h2>
+            <p>We performed individual studies of log-returns for each company, tested distribution normality, estimated parameters with confidence intervals, and conducted regression analyses to explore industry behavior patterns.</p>
+
+            <img src="images/returns.png" alt="Returns Plot" style="width:100%; margin: 2em 0;" />
+
+            <p><strong>Tesla showed notably higher volatility compared to its peers</strong>, particularly during the 2020 COVID-19 market disruptions. Confidence intervals suggested higher variance in tech companies and Tesla.</p>
+
+            <img src="images/confidence_intervals_mean_variance.png" alt="Confidence Intervals" style="width:100%; margin: 2em 0;" />
+
+            <p>Linear regression showed slopes close to zero, indicating time alone doesn't explain returns. However, Tesla’s pattern deviated from traditional automakers.</p>
+
+            <img src="images/linear_reg_returns.png" alt="Linear Regression Returns" style="width:100%; margin: 2em 0;" />
+
+            <h2>Pairwise & Multiple Regressions</h2>
+            <p>We conducted hypothesis tests comparing Tesla with each company, both with unequal variances and paired t-tests. Tesla’s strongest similarities were with tech firms like Apple and Google.</p>
+
+            <img src="images/tests_means.png" alt="Tests of Means" style="width:100%; margin: 2em 0;" />
+            <img src="images/linear_reg_tesla_vs_all.png" alt="Regression vs All" style="width:100%; margin: 2em 0;" />
+
+            <p><strong>Multiple regression:</strong> Tesla vs Tech had R² = 0.15 vs R² = 0.11 for Tesla vs Automakers, indicating Tesla aligns more with tech sector behavior.</p>
+
+            <h2>Conclusion</h2>
+            <p>This statistical study suggests Tesla is not a typical car manufacturer. It shares more behavioral traits with technology companies. While complex factors influence stock returns, Tesla’s deviation from automotive norms is statistically evident and warrants deeper exploration.</p>
+
+            <p><a href="https://github.com/salomon-alvarez/Statistical-Testing" target="_blank">View the GitHub repository</a></p>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
