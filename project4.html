@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistical Analysis & Hypothesis Testing</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div class="inner">
+        <h1>Statistical Analysis & Hypothesis Testing</h1>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Statistical Analysis & Hypothesis Testing</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+        <h2>Analysis on Tesla, Inc.</h2>
 
-<body>
-  <header>
-    <h1>Statistical Analysis & Hypothesis Testing</h1>
-    <p>Applied A/B testing and statistical inference techniques to real-world scenarios.</p>
-  </header>
+        <h2>Data Set Description</h2>
+        <p>The data used in this project consists of daily historical stock prices of nine companies from either the automotive or technology sectors, and one stock market index (NASDAQ Composite). The data ranges from November 27th, 2018 to November 25th, 2020, totaling 504 data points of open and closing prices.</p>
 
-  <main class="project-content">
-    <section>
-      <h2>Objectives</h2>
-      <p>Since its inception the automotive industry comprises almost entirely the same big old companies, namely, Ford, General Motors, Toyota, Daimler, among a few others. It seems the word “newcomer” is anathema to this industry. If a company manages to get started, it takes many decades to become as big as the competition. Four out of the five automakers listed here were founded at least 84 years ago. One may speculate that this is due to the enormous amount of knowledge and resources needed from the very beginning, most likely with no prospects of profits on the near horizon, and then, the difficulties of gaining customers that would rather buy a car from a long trusted manufacturer.</p>
-      <p>However, Tesla, Inc. has proven by its meteoric rise to be an exception to the rule. Founded in 2003, it has had a growth that appears to be antithetic to the movements and developments of the automobile industry, with a current market capitalization of $578.21B, the biggest for an automaker, trailed in second place by Toyota with a market capitalization of $211.66B. It seems that Tesla's growth mimics more the behavior of a tech company, like Google or Apple. It may be interesting to explore this idea statistically and give advice to our clients on how to view Tesla—as a successful car manufacturer or something else.</p>
-      <p>In order to achieve this, the following analysis structure based on the log-returns of the securities was followed:</p>
-      <ul>
-        <li>An individual study to elucidate the behavior of each security’s returns.</li>
-        <li>A pairing-based statistical analysis of Tesla’s returns against other companies.</li>
-        <li>Multiple linear regressions comparing Tesla to the automotive sector and the tech sector.</li>
-      </ul>
-    </section>
+        <p><strong>Automotive sector:</strong><br />
+        Tesla, Inc. (TSLA)<br />
+        Daimler AG (DAI.DE)<br />
+        Toyota Motor Corporation (TM)<br />
+        General Motors Company (GM)<br />
+        Ford Motor Company (F)</p>
 
-    <section>
-      <h2>Analysis</h2>
-      <p>The histogram of the log-return shows that the distribution of these values for all the securities is approximately normal. Also, the data was plotted against the theoretical normal distribution, corroborating that in all cases the log-returns form an approximate line, indicating approximate normality with R² coefficients all over 0.85.</p>
-      <p><img src="images/project4/returns.png" alt="Log Returns Histogram"></p>
-      <p>Just by looking at this graph, we should expect a higher volatility from Tesla, which deviates more than the other time series curves that appear clustered around zero—even during the first peak of the global pandemic in April 2020.</p>
-      <p>Considering 95% confidence, we performed parameter estimation on the mean and variance of the returns using t-distribution and chi-squared distribution intervals.</p>
-      <p><img src="images/project4/confidence_intervals_mean_variance.png" alt="Confidence Intervals"></p>
-      <p>The results show that the average returns are very close to zero, though skewed positively. The tech sector shows broader variance intervals, while the automotive sector shows tighter ones—except Tesla, again aligning more with tech behavior.</p>
-      <p><img src="images/project4/linear_reg_returns.png" alt="Linear Regression on Returns"></p>
-      <p>The slope in linear regressions over time is close to zero, and the R² values confirm that time does not explain much of the variation in returns.</p>
-    </section>
+        <p><strong>Technology sector:</strong><br />
+        Apple Inc. (AAPL)<br />
+        Alphabet Inc. (GOOG)<br />
+        Dell Technologies Inc. (DELL)<br />
+        Microsoft Corporation (MSFT)</p>
 
-    <section>
-      <h2>Pairing-based Analyses</h2>
-      <p>We performed hypothesis testing for the equality of the means using both unequal variances and paired t-tests. In both, we compared Tesla to other companies and to the Nasdaq index.</p>
-      <p><img src="images/project4/tests_means.png" alt="Tests of Means"></p>
-      <p>In the test with unequal variances, we could not reject the hypothesis that Tesla’s returns have the same mean as other companies. However, Tesla appeared more similar to tech firms (e.g., Google, Apple) than automakers.</p>
-      <p>In the paired t-test, only Toyota and Ford were significantly different from Nasdaq. Again, Tesla's strongest alignment was with Google and Apple.</p>
-      <p><img src="images/project4/linear_reg_tesla_vs_all.png" alt="Linear Regressions Tesla vs Others"></p>
-      <p>Linear regressions showed that variation in Tesla's returns is better explained by tech companies. Multiple regressions confirmed this: Tesla vs. Tech sector yielded R² = 0.15, while Tesla vs. Automakers yielded R² = 0.11.</p>
-    </section>
+        <p><strong>Index:</strong><br />
+        NASDAQ Composite (^IXIC)</p>
 
-    <section>
-      <h2>Conclusions</h2>
-      <p>Understanding stock behavior is complex, but we can say Tesla is not your average automaker. Statistically, its returns align more with tech firms than automotive ones. This opens questions—Is Tesla more a tech company than a carmaker? Is it reshaping its industry or riding a wave of hype? What’s clear is that Tesla stands apart. Its case deserves continued attention.</p>
-    </section>
+        <h2>Objectives</h2>
+        <p>Since its inception, the automotive industry has been dominated by long-established companies like Ford, GM, Toyota, and Daimler. Newcomers rarely break through due to the capital, trust, and scale required. Tesla, founded in 2003, is a stark exception. Its explosive growth and market cap (578B, surpassing Toyota’s 211B) resemble a tech company more than a traditional automaker. This study statistically explores Tesla's behavior to assess whether its market dynamics align more with the automotive or tech sector.</p>
 
-    <footer>
-      <p><a href="https://github.com/salomon-alvarez/Statistical-Testing" target="_blank">View on GitHub</a></p>
-    </footer>
-  </main>
-</body>
+        <p>The following steps were taken using log-returns:</p>
+        <ul>
+          <li>Univariate analysis of each company's returns, including profitability and volatility trends.</li>
+          <li>Pairwise comparisons of Tesla against other companies through correlation, t-tests, and linear regressions.</li>
+          <li>Multiple regressions of Tesla versus all automakers and versus all tech firms to evaluate sector alignment.</li>
+        </ul>
 
+        <h2>Analysis</h2>
+        <p>Histograms of the log-returns indicate approximate normality across all securities. Normal Q-Q plots confirm this (R² > 0.85 for all).</p>
+
+        <img src="images/p4_returns.png" alt="Returns Time Series" />
+        <p>Returns time series show Tesla’s volatility distinctly above the rest, especially during events like the early 2020 pandemic shock.</p>
+
+        <img src="images/p4_confidence_intervals_mean_variance.png" alt="Confidence Intervals" />
+        <p>Confidence intervals (95%) show mean returns clustering around zero but slightly skewed positive. Tech stocks have broader variance intervals; Tesla’s variance aligns more with the tech sector than automotive.</p>
+
+        <img src="images/p4_linear_reg_returns.png" alt="Linear Regression Over Time" />
+        <p>Linear regression over time shows weak explanatory power (low R²), confirming returns are not time-driven.</p>
+
+        <h2>Pairing-Based Analyses</h2>
+        <p>T-tests comparing Tesla with other stocks reveal no significant differences in mean returns. However, Tesla’s p-values are more similar to tech companies (e.g., Apple, Google) than automakers. Paired t-tests support this pattern, with the highest p-values between Tesla and tech firms.</p>
+
+        <img src="images/p4_tests_means.png" alt="T-test Results" />
+
+        <img src="images/p4_linear_reg_tesla_vs_all.png" alt="Tesla vs All Regression" />
+        <p>Linear regression coefficients show Tesla’s returns are better predicted by tech companies’ performance. Multiple regressions confirm this with higher R² when Tesla is regressed against tech firms (0.15) vs automakers (0.11).</p>
+
+        <h2>Conclusions</h2>
+        <p>This study suggests Tesla’s financial behavior is not aligned with traditional automakers. Statistically, it shares more in common with the tech sector. Whether it’s changing the industry or simply behaving like a volatile tech stock is open to interpretation, but the data confirms it is an outlier in the auto space.</p>
+
+        <p><a href="https://github.com/salomon-alvarez/Statistical-Testing" target="_blank">View project on GitHub</a></p>
+      </div>
+    </div>
+  </body>
 </html>
