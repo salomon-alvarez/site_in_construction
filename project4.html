@@ -1,89 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Statistical Analysis & Hypothesis Testing – Salomon Alvarez</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statistical Analysis & Hypothesis Testing</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="is-preload">
-<div id="wrapper">
 
-    <header id="header">
-        <div class="inner">
-            <a href="index.html" class="logo">
-                <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Salomon Alvarez</span>
-            </a>
-            <nav>
-                <ul><li><a href="#menu">Menu</a></li></ul>
-            </nav>
-        </div>
-    </header>
+<body>
+  <header>
+    <h1>Statistical Analysis & Hypothesis Testing</h1>
+    <p>Applied A/B testing and statistical inference techniques to real-world scenarios.</p>
+  </header>
 
-    <nav id="menu">
-        <h2>Menu</h2>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+  <main class="project-content">
+    <section>
+      <h2>Objectives</h2>
+      <p>Since its inception the automotive industry comprises almost entirely the same big old companies, namely, Ford, General Motors, Toyota, Daimler, among a few others. It seems the word “newcomer” is anathema to this industry. If a company manages to get started, it takes many decades to become as big as the competition. Four out of the five automakers listed here were founded at least 84 years ago. One may speculate that this is due to the enormous amount of knowledge and resources needed from the very beginning, most likely with no prospects of profits on the near horizon, and then, the difficulties of gaining customers that would rather buy a car from a long trusted manufacturer.</p>
+      <p>However, Tesla, Inc. has proven by its meteoric rise to be an exception to the rule. Founded in 2003, it has had a growth that appears to be antithetic to the movements and developments of the automobile industry, with a current market capitalization of $578.21B, the biggest for an automaker, trailed in second place by Toyota with a market capitalization of $211.66B. It seems that Tesla's growth mimics more the behavior of a tech company, like Google or Apple. It may be interesting to explore this idea statistically and give advice to our clients on how to view Tesla—as a successful car manufacturer or something else.</p>
+      <p>In order to achieve this, the following analysis structure based on the log-returns of the securities was followed:</p>
+      <ul>
+        <li>An individual study to elucidate the behavior of each security’s returns.</li>
+        <li>A pairing-based statistical analysis of Tesla’s returns against other companies.</li>
+        <li>Multiple linear regressions comparing Tesla to the automotive sector and the tech sector.</li>
+      </ul>
+    </section>
 
-    <div id="main">
-        <div class="inner">
-            <header>
-                <h1>Statistical Analysis & Hypothesis Testing</h1>
-                <p><strong>Is Tesla a tech company or a traditional automaker? This study applies statistical testing to explore Tesla’s identity through return behaviors compared to industry peers.</strong></p>
-            </header>
+    <section>
+      <h2>Analysis</h2>
+      <p>The histogram of the log-return shows that the distribution of these values for all the securities is approximately normal. Also, the data was plotted against the theoretical normal distribution, corroborating that in all cases the log-returns form an approximate line, indicating approximate normality with R² coefficients all over 0.85.</p>
+      <p><img src="images/project4/returns.png" alt="Log Returns Histogram"></p>
+      <p>Just by looking at this graph, we should expect a higher volatility from Tesla, which deviates more than the other time series curves that appear clustered around zero—even during the first peak of the global pandemic in April 2020.</p>
+      <p>Considering 95% confidence, we performed parameter estimation on the mean and variance of the returns using t-distribution and chi-squared distribution intervals.</p>
+      <p><img src="images/project4/confidence_intervals_mean_variance.png" alt="Confidence Intervals"></p>
+      <p>The results show that the average returns are very close to zero, though skewed positively. The tech sector shows broader variance intervals, while the automotive sector shows tighter ones—except Tesla, again aligning more with tech behavior.</p>
+      <p><img src="images/project4/linear_reg_returns.png" alt="Linear Regression on Returns"></p>
+      <p>The slope in linear regressions over time is close to zero, and the R² values confirm that time does not explain much of the variation in returns.</p>
+    </section>
 
-            <h2>Project Overview</h2>
-            <p>This project was completed at Columbia University for IEOR E4150 with Professor Dr. A. B. Dieker. It applies a series of statistical tests and regressions to assess whether Tesla behaves more like a tech stock or an automaker.</p>
+    <section>
+      <h2>Pairing-based Analyses</h2>
+      <p>We performed hypothesis testing for the equality of the means using both unequal variances and paired t-tests. In both, we compared Tesla to other companies and to the Nasdaq index.</p>
+      <p><img src="images/project4/tests_means.png" alt="Tests of Means"></p>
+      <p>In the test with unequal variances, we could not reject the hypothesis that Tesla’s returns have the same mean as other companies. However, Tesla appeared more similar to tech firms (e.g., Google, Apple) than automakers.</p>
+      <p>In the paired t-test, only Toyota and Ford were significantly different from Nasdaq. Again, Tesla's strongest alignment was with Google and Apple.</p>
+      <p><img src="images/project4/linear_reg_tesla_vs_all.png" alt="Linear Regressions Tesla vs Others"></p>
+      <p>Linear regressions showed that variation in Tesla's returns is better explained by tech companies. Multiple regressions confirmed this: Tesla vs. Tech sector yielded R² = 0.15, while Tesla vs. Automakers yielded R² = 0.11.</p>
+    </section>
 
-            <h2>Dataset</h2>
-            <p>The dataset includes daily open and close stock prices from 2018-11-27 to 2020-11-25 for 9 companies across the automotive and technology sectors, plus the NASDAQ index. Log returns were used for the analysis.</p>
+    <section>
+      <h2>Conclusions</h2>
+      <p>Understanding stock behavior is complex, but we can say Tesla is not your average automaker. Statistically, its returns align more with tech firms than automotive ones. This opens questions—Is Tesla more a tech company than a carmaker? Is it reshaping its industry or riding a wave of hype? What’s clear is that Tesla stands apart. Its case deserves continued attention.</p>
+    </section>
 
-            <ul>
-                <li><strong>Automotive:</strong> Tesla (TSLA), Daimler (DAI.DE), Toyota (TM), GM, Ford (F)</li>
-                <li><strong>Technology:</strong> Apple (AAPL), Google (GOOG), Dell, Microsoft (MSFT)</li>
-                <li><strong>Index:</strong> NASDAQ Composite (^IXIC)</li>
-            </ul>
-
-            <h2>Methodology</h2>
-            <p>We performed individual studies of log-returns for each company, tested distribution normality, estimated parameters with confidence intervals, and conducted regression analyses to explore industry behavior patterns.</p>
-
-            <img src="images/project4/returns.png" alt="Returns Plot" style="width:100%; margin: 2em 0;" />
-
-            <p><strong>Tesla showed notably higher volatility compared to its peers</strong>, particularly during the 2020 COVID-19 market disruptions. Confidence intervals suggested higher variance in tech companies and Tesla.</p>
-
-            <img src="images/project4/confidence_intervals_mean_variance.png" alt="Confidence Intervals" style="width:100%; margin: 2em 0;" />
-
-            <p>Linear regression showed slopes close to zero, indicating time alone doesn't explain returns. However, Tesla’s pattern deviated from traditional automakers.</p>
-
-            <img src="images/project4/linear_reg_returns.png" alt="Linear Regression Returns" style="width:100%; margin: 2em 0;" />
-
-            <h2>Pairwise & Multiple Regressions</h2>
-            <p>We conducted hypothesis tests comparing Tesla with each company, both with unequal variances and paired t-tests. Tesla’s strongest similarities were with tech firms like Apple and Google.</p>
-
-            <img src="images/project4/tests_means.png" alt="Tests of Means" style="width:100%; margin: 2em 0;" />
-            <img src="images/project4/linear_reg_tesla_vs_all.png" alt="Regression vs All" style="width:100%; margin: 2em 0;" />
-
-            <p><strong>Multiple regression:</strong> Tesla vs Tech had R² = 0.15 vs R² = 0.11 for Tesla vs Automakers, indicating Tesla aligns more with tech sector behavior.</p>
-
-            <h2>Conclusion</h2>
-            <p>This statistical study suggests Tesla is not a typical car manufacturer. It shares more behavioral traits with technology companies. While complex factors influence stock returns, Tesla’s deviation from automotive norms is statistically evident and warrants deeper exploration.</p>
-
-            <p><a href="https://github.com/salomon-alvarez/Statistical-Testing" target="_blank">View the GitHub repository</a></p>
-        </div>
-    </div>
-</div>
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
+    <footer>
+      <p><a href="https://github.com/salomon-alvarez/Statistical-Testing" target="_blank">View on GitHub</a></p>
+    </footer>
+  </main>
 </body>
+
 </html>
