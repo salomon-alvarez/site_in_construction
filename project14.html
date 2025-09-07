@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time Series & Regression Forecasting – Salomon Alvarez</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
+  <header id="header">
+    <div class="inner">
+      <a href="index.html" class="logo">
+        <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Salomon Alvarez</span>
+      </a>
+      <nav><ul><li><a href="#menu">Menu</a></li></ul></nav>
+    </div>
+  </header>
 
+  <nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="main">
+    <div class="inner">
+      <header>
+        <h1>Time Series Forecasting and Linear Regression Modeling</h1>
+        <p><strong>Forecasting currency trends and evaluating trading strategies using ARMA, ARIMA, GARCH, and linear regression techniques in Python.</strong></p>
+      </header>
+
+      <h2>Summary</h2>
+      <p>This project focused on modeling and forecasting the USD/JPY exchange rate using both time-series and regression techniques. The analysis explored how historical price and volatility patterns could inform future trends and whether these forecasts could support trading decisions.</p>
+
+      <h2>1. Time-Series Forecasting</h2>
+      <p>Using historical futures data for the Dollar-Yen exchange rate, I applied several time series models to explore potential predictive signals:</p>
+      <ul>
+        <li><strong>Hodrick-Prescott Filter:</strong> Decomposed the time series into trend and noise components.</li>
+        <li><strong>ARMA:</strong> Forecasted returns based on autoregressive and moving average terms.</li>
+        <li><strong>ARIMA:</strong> Forecasted the future settle price over a 5-day horizon.</li>
+        <li><strong>GARCH:</strong> Modeled and forecasted volatility over the same time horizon.</li>
+      </ul>
+
+      <h3>Key Questions Addressed:</h3>
+      <ul>
+        <li>Should I buy yen now based on the price forecasts?</li>
+        <li>Is the expected volatility increasing or decreasing?</li>
+        <li>Are these models reliable enough for trading?</li>
+      </ul>
+
+      <h3>Results:</h3>
+      <ul>
+        <li><strong>ARIMA</strong> forecast showed rising prices → suggested a buying opportunity.</li>
+        <li><strong>ARMA</strong> forecast showed a price drop → suggested not buying.</li>
+        <li><strong>GARCH</strong> predicted rising volatility over the 5-day forecast horizon.</li>
+        <li><strong>P-values</strong> in both ARMA and ARIMA exceeded 0.05 → indicating weak statistical significance. Therefore, these models may not be reliable for trading decisions.</li>
+      </ul>
+
+      <h2>2. Linear Regression Forecasting</h2>
+      <p>I built a linear regression model using <strong>Scikit-learn</strong> to predict Yen returns based on lagged returns and seasonal calendar effects (e.g., day of the week, week of the year).</p>
+
+      <img src="images/project14/data.png" alt="Returns Preparation" style="max-width: 800px; width: 100%; height: auto; margin: 2em 0;" />
+      <img src="images/project14/lagged_returns.png" alt="Lagged Returns" style="max-width: 800px; width: 100%; height: auto; margin: 2em 0;" />
+
+      <p>After fitting the model, I used the testing data to evaluate predictions and compare in-sample vs out-of-sample performance.</p>
+
+      <img src="images/project14/lmodel.png" alt="Regression Model Fit" style="max-width: 800px; width: 100%; height: auto; margin: 2em 0;" />
+      <img src="images/project14/pred.png" alt="Prediction Summary" style="max-width: 800px; width: 100%; height: auto; margin: 2em 0;" />
+      <img src="images/project14/pred_plots.png" alt="Prediction Plots" style="max-width: 800px; width: 100%; height: auto; margin: 2em 0;" />
+
+      <h3>Performance Evaluation</h3>
+      <img src="images/project14/in_out.png" alt="In vs Out of Sample" style="max-width: 800px; width: 100%; height: auto; margin: 2em 0;" />
+
+      <p><strong>Root Mean Squared Error (RMSE):</strong></p>
+      <ul>
+        <li>Out-of-sample RMSE: 0.4152</li>
+        <li>In-sample RMSE: 0.5658</li>
+      </ul>
+      <p>This indicates that the model actually performed better on new data than on the training set—suggesting that the model was not overfitted and may generalize well to unseen data.</p>
+
+      <h2>Conclusion</h2>
+      <ul>
+        <li>Time series techniques (ARIMA, ARMA, GARCH) offered insights into trend and volatility, but weak statistical significance limits their reliability for active trading strategies.</li>
+        <li>The linear regression model demonstrated more consistent results, particularly in predicting returns using lagged values and seasonality.</li>
+      </ul>
+      <p>These combined methods show how statistical forecasting and regression modeling can be used to explore financial strategies and evaluate risk.</p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
