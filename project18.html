@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forecasting MACD with RNN – Salomon Alvarez</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
 
+  <header id="header">
+    <div class="inner">
+      <a href="index.html" class="logo">
+        <span class="symbol"><img src="images/logo.svg" alt="" /></span>
+        <span class="title">Salomon Alvarez</span>
+      </a>
+      <nav>
+        <ul><li><a href="#menu">Menu</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="main">
+    <div class="inner">
+
+      <header>
+        <h1>Time Series Forecasting for Algorithmic Trading</h1>
+        <p><strong>Developed a multi-step LSTM model to forecast MACD crossover signals up to 6 days ahead, successfully predicting early signals in 3 out of 4 real cases — demonstrating how Deep Learning can enhance technical indicators for trading strategies.</strong></p>
+      </header>
+
+      <h2>Project Objective</h2>
+      <p>Technical indicators like MACD help visualize momentum and trend reversals in trading. But what if we could predict these signals slightly in advance? This project explores whether a Recurrent Neural Network (LSTM) can forecast upcoming MACD crossovers using past price sequences, potentially enabling traders to act earlier.</p>
+
+      <h2>1. Understanding MACD and Its Role in Trading</h2>
+      <p>The Moving Average Convergence Divergence (MACD) is a momentum indicator built from two exponential moving averages (EMA): a slow and a fast one. The crossover of these EMAs signals potential trend reversals. While widely used, MACD is inherently reactive — it only reflects past price behavior. The goal here is to forecast the crossover itself before it happens, using historical price patterns.</p>
+
+      <img src="images/project18/crossover.png" alt="MACD Crossover" style="width:100%; margin: 2em 0;" />
+
+      <h2>2. Strategy: Forecasting MACD Crossovers</h2>
+      <p>Using a Recurrent Neural Network (RNN) architecture — specifically a stacked LSTM — I trained the model on sequences of price data from Devon Energy (DVN), a stock with historically high volatility. The model takes a fixed-length sequence of daily prices and learns to predict the next 6-day price window. By comparing the forecasted EMA crossover to the actual one, we assess the model’s ability to anticipate MACD signals.</p>
+
+      <p>The model was tested on real crossover cases after its training period to check if the predicted prices would anticipate the signal before the MACD did.</p>
+
+      <h2>3. Data Setup</h2>
+      <ul>
+        <li><strong>Stock:</strong> Devon Energy Company (DVN)</li>
+        <li><strong>Training Period:</strong> 02/17/2015 – 04/27/2018</li>
+        <li><strong>Prediction Period:</strong> 04/27/2018 – Present</li>
+        <li><strong>MACD Parameters:</strong> Fast EMA – 10 days, Slow EMA – 40 days</li>
+        <li><strong>Forecast Horizon:</strong> 6-day future window</li>
+      </ul>
+
+      <h3>Selected Test Crossover Points</h3>
+      <img src="images/project18/real1.png" alt="Real Signal 1" style="width:48%; margin: 1em 1em 2em 0;" />
+      <img src="images/project18/real2.png" alt="Real Signal 2" style="width:48%; margin: 1em 0 2em 0;" />
+      <img src="images/project18/real3.png" alt="Real Signal 3" style="width:48%; margin: 1em 1em 2em 0;" />
+      <img src="images/project18/real4.png" alt="Real Signal 4" style="width:48%; margin: 1em 0 2em 0;" />
+
+      <h2>4. Model Architecture</h2>
+      <p>The model is a stacked LSTM architecture with three layers:</p>
+      <ul>
+        <li>Two hidden layers with 100 neurons each (ReLU activation)</li>
+        <li>Output layer with 6 neurons (for 6-day price forecast)</li>
+      </ul>
+
+      <p>Data was split into overlapping sub-sequences using a custom function. Each sequence was fed as input (X) and target (y) pairs.</p>
+
+      <img src="images/project18/model.png" alt="Model Architecture" style="width:100%; margin: 2em 0;" />
+
+      <h2>5. Forecasting Results</h2>
+      <p>Forecasted prices were compared with actual prices around 4 different crossover events. The model was able to anticipate a crossover in 3 of those 4 cases, showing promising capabilities in short-term forecasting for trading.</p>
+
+      <h3>Forecasted Price Outputs</h3>
+      <img src="images/project18/result1df.png" alt="Result Table 1" style="width:48%; margin: 1em 1em 2em 0;" />
+      <img src="images/project18/result2df.png" alt="Result Table 2" style="width:48%; margin: 1em 0 2em 0;" />
+      <img src="images/project18/result3df.png" alt="Result Table 3" style="width:48%; margin: 1em 1em 2em 0;" />
+      <img src="images/project18/result4df.png" alt="Result Table 4" style="width:48%; margin: 1em 0 2em 0;" />
+
+      <h3>Forecast vs MACD Crossovers</h3>
+      <img src="images/project18/result1plot.png" alt="Plot 1" style="width:48%; margin: 1em 1em 2em 0;" />
+      <img src="images/project18/result2plot.png" alt="Plot 2" style="width:48%; margin: 1em 0 2em 0;" />
+      <img src="images/project18/result3plot.png" alt="Plot 3" style="width:48%; margin: 1em 1em 2em 0;" />
+      <img src="images/project18/result4plot.png" alt="Plot 4" style="width:48%; margin: 1em 0 2em 0;" />
+
+      <h2>6. Conclusion</h2>
+      <p>This project provides early evidence that Recurrent Neural Networks — particularly LSTM architectures — can complement traditional technical indicators like MACD by forecasting trend reversals a few days in advance. While not a complete trading solution on their own, such models can serve as valuable tools in a larger algorithmic trading system, improving reaction time and decision quality in volatile markets.</p>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
